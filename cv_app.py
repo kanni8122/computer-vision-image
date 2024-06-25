@@ -4,6 +4,15 @@ from PIL import Image
 import numpy as np
 import streamlit as st
 
+print("OpenCV version:", cv2.__version__)
+
+try:
+    haarcascades_path = cv2.data.haarcascades
+    print("Haarcascades path:", haarcascades_path)
+except AttributeError as e:
+    print("AttributeError:", e)
+
+
 st.title("Advanced Computer Vision Project")
 st.write("Upload an image and apply various transformations.")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
