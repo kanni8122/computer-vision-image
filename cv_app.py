@@ -4,13 +4,13 @@ from PIL import Image
 import numpy as np
 import streamlit as st
 
-print("OpenCV version:", cv2.__version__)
+# print("OpenCV version:", cv2.__version__)
 
-try:
-    haarcascades_path = cv2.data.haarcascades
-    print("Haarcascades path:", haarcascades_path)
-except AttributeError as e:
-    print("AttributeError:", e)
+# try:
+#     haarcascades_path = cv2.data.haarcascades
+#     print("Haarcascades path:", haarcascades_path)
+# except AttributeError as e:
+#     print("AttributeError:", e)
 
 
 st.title("Advanced Computer Vision Project")
@@ -88,14 +88,14 @@ if uploaded_file is not None:
             filtered_image = cv2.bilateralFilter(img_array, d, sigma_color, sigma_space)
             st.image(filtered_image, caption='Bilateral Filtered Image', use_column_width=True)
 
-    with st.expander("Face Detection"):
-        st.write("### Face Detection")
-        face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-        faces = face_cascade.detectMultiScale(gray_image, scaleFactor=1.1, minNeighbors=5)
-        face_detected_image = img_array.copy()
-        for (x, y, w, h) in faces:
-            cv2.rectangle(face_detected_image, (x, y), (x+w, y+h), (255, 0, 0), 2)
-        st.image(face_detected_image, caption='Face Detection', use_column_width=True)
+    # with st.expander("Face Detection"):
+    #     st.write("### Face Detection")
+    #     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+    #     faces = face_cascade.detectMultiScale(gray_image, scaleFactor=1.1, minNeighbors=5)
+    #     face_detected_image = img_array.copy()
+    #     for (x, y, w, h) in faces:
+    #         cv2.rectangle(face_detected_image, (x, y), (x+w, y+h), (255, 0, 0), 2)
+    #     st.image(face_detected_image, caption='Face Detection', use_column_width=True)
 
     with st.expander("Color Space Conversion"):
         st.write("### Color Space Conversion")
