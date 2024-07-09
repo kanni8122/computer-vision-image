@@ -13,4 +13,3 @@ The project also includes specialized applications in computer vision. These inc
 4. Python Imaging Library
 5. Numpy
 
-# To See the Project - https://computer-vision-image-dsxtkesszv68ub2udlweqt.streamlit.app/
